@@ -18,7 +18,7 @@ const startServer = async () => {
     context: authMiddleware,
   });
 
-  // await server.start();
+  await server.start();
   // integrate our Apollo server with the Express application as middleware
   server.applyMiddleware({ app });
   // log where we can go to test our GQL API
