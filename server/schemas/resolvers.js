@@ -7,34 +7,13 @@ const resolvers = {
     // logic here remains the same
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id })
-          .select("-__v -password")
-          .populate("thoughts")
-          .populate("friends");
-
+        const userData = await User.findOne({ _id: context.user._id }).select(
+          "-__v -password"
+        );
         return userData;
       }
 
       throw new AuthenticationError("Not logged in");
-    },
-    users: async () => {
-      return User.find()
-        .select("-__v -password")
-        .populate("thoughts")
-        .populate("friends");
-    },
-    user: async (parent, { username }) => {
-      return User.findOne({ username })
-        .select("-__v -password")
-        .populate("friends")
-        .populate("thoughts");
-    },
-    thoughts: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Thought.find(params).sort({ createdAt: -1 });
-    },
-    thought: async (parent, { _id }) => {
-      return Thought.findOne({ _id });
     },
   },
 
@@ -61,49 +40,28 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addThought: async (parent, args, context) => {
+    // save a book to a user's `savedBooks` field by adding it to the set (to prevent duplicates)
+    // user comes from `req.user` created in the auth middleware function
+    saveBook: async (parent, args, context) => {
       if (context.user) {
-        const thought = await Thought.create({
-          ...args,
-          username: context.user.username,
-        });
-
-        await User.findByIdAndUpdate(
+        const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { thoughts: thought._id } },
+          { $push: { savedBooks: args.bookData } },
           { new: true }
         );
-
-        return thought;
+        return updatedUser;
       }
 
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError("Incorrect credentials");
     },
-    addReaction: async (parent, { thoughtId, reactionBody }, context) => {
-      if (context.user) {
-        const updatedThought = await Thought.findOneAndUpdate(
-          { _id: thoughtId },
-          {
-            $push: {
-              reactions: { reactionBody, username: context.user.username },
-            },
-          },
-          { new: true, runValidators: true }
-        );
-
-        return updatedThought;
-      }
-
-      throw new AuthenticationError("You need to be logged in!");
-    },
-    addFriend: async (parent, { friendId }, context) => {
+    // remove a book from `savedBooks`
+    deleteBook: async (parent, args, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { friends: friendId } },
-          { new: true }
-        ).populate("friends");
-
+          { $pull: { savedBooks: { bookId: args.bookId } } },
+          { new: true, runValidators: true }
+        );
         return updatedUser;
       }
 
