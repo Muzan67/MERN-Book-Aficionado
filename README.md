@@ -1,19 +1,18 @@
 # MERN-Book-Aficionado
 
-# Alejandro Cortez MERN-Book-Aficionado - Deployed Application
+# MERN-Book-Aficionado - Deployed Application
 
-# Alejandro Cortez MERN-Book-Aficionado - Github Repository
+# MERN-Book-Aficionado - Github Repository
 
 https://github.com/Muzan67/MERN-Book-Aficionado
 
 # Desciption
 
-My React Portfolio contains:
+The Google Book Search Engine allows you to search and save your book(s).
 
-- A section about me
-- My resume
-- Links to my deployed works
-- Contact Me - provides multiple methods of communication were people can get in contact with me.
+This application is a fully functioning Google Books API search engine built with a RESTful API. The task required from me was to
+refactor the code to be a GraphQL API built with Apollo Server. The app was built using the MERN stack, with a React front end,
+MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end.
 
 # Table of Contents - MERN-Book-Aficionado
 
@@ -79,14 +78,16 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 # Technologies Used
 
+- MERN Stack {
+- Mongo DB
+- Express.js
 - React
 - Node.js
-- Express.js
+  }
 - JSX
 - Apollo Server
 - Graph QL
-- MOngo DB
-- MOngoose
+- Mongoose
 
 # Installation
 
