@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 
 import Auth from "../utils/auth";
-import { saveBook, searchGoogleBooks } from "../utils/API";
+// import { saveBook, searchGoogleBooks } from "../utils/API";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
 
 import { useMutation } from "@apollo/client";
@@ -21,7 +21,7 @@ const SearchBooks = () => {
   const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState("");
-
+  const [saveBook, { error }] = useMutation(SAVE_BOOK)
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
@@ -39,7 +39,6 @@ const SearchBooks = () => {
       return false;
     }
 // make a search to google books api from (API.js)
-// search input from from form control to search for a book
     try {
       const response = await fetch(
         `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`
