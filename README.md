@@ -80,30 +80,25 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 # Technologies Used
 
 - React
-- React Bootstrap
-- Javascript
-- HTML5
-- CSS
+- Node.js
+- Express.js
+- JSX
+- Apollo Server
+- Graph QL
+- MOngo DB
+- MOngoose
 
 # Installation
 
-1. To install this application, clone the code into your terminal for the respective repository.
-
-Run the following commands in the command-line in the root of the folder:
-
-2. npm run build
-3. npm start
-
 # Usage
-
-- Use the navigation bar to navigate through different sections of my portfolio.
-- Click on the various Web Applications in the "Projects" tab to navigate to their deployed page and/or repository.
 
 # Questions / Inquiry
 
 - You can view more of my projects at https://github.com/Muzan67
-- My Github username is Muzan67, the repository for my React Portfolio can be found at https://github.com/Muzan67/Alejandro-Cortez-React-Portfolio
-- The Github page for this project can be accessed using the following link: https://muzan67.github.io/Alejandro-Cortez-React-Portfolio/
+
+- My Github username is Muzan67, the repository for my MERN-Book-Aficionado can be found athttps://github.com/Muzan67/MERN-Book-Aficionado
+
+- The Github page for this project can be accessed using the following link:
 
 - If you have any questions about this projects, please contact me directly at ac.tendo67@gmail.com
 
