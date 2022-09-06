@@ -11,7 +11,7 @@ https://github.com/Muzan67/MERN-Book-Aficionado
 The Google Book Search Engine allows you to search and save your book(s).
 
 This application is a fully functioning Google Books API search engine built with a RESTful API. The task required from me was to
-refactor the code to be a GraphQL API built with Apollo Server. The app was built using the MERN stack, with a React front end,
+refactor the code to be a GraphQL API built an with Apollo Server. The app was built using the MERN stack, with a React front end,
 MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end.
 
 # Table of Contents - MERN-Book-Aficionado
@@ -97,7 +97,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 - You can view more of my projects at https://github.com/Muzan67
 
-- My Github username is Muzan67, the repository for my MERN-Book-Aficionado can be found athttps://github.com/Muzan67/MERN-Book-Aficionado
+- My Github username is Muzan67, the repository for my MERN-Book-Aficionado can be found at https://github.com/Muzan67/MERN-Book-Aficionado
 
 - The Github page for this project can be accessed using the following link:
 
