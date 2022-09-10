@@ -39,6 +39,7 @@ const typeDefs = gql`
   input BookInput {
     authors: [String]
   }
+
 `;
 
 // export the typeDefs

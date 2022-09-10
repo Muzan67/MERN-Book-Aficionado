@@ -91,7 +91,21 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 # Installation
 
+To install this application, clone the code into your terminal for the respective repository. Then, install npm by entering the command npm install into the root directory of the terminal. This will install all dependencies in the package.json required to run this application. Don't forget to add .gitignore files to include node_modules before installing npm.
+
 # Usage
+Run the following commands in the command-line in the root of the folder
+
+1.  npm install
+2.  npm run build
+3.  npm run develop
+4.  The browser will open at http://localhost:3000/
+5.  Sign Up for an account by entering an email, username, and password
+6.  After signing up, you will automatically be logged in
+7.  Once logged in, you may search for a book
+8.  You have the ability to save books, which you can retrieve at the "See Your Books" tab
+9.  You can search for books again using the "Search For Books" tab
+10. You may logout by hitting the "logout" button
 
 # Questions / Inquiry
 
@@ -106,3 +120,5 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 - How to reach me: https://www.linkedin.com/in/alejandro-cortez1967/
 
 # Screenshots of MERN-Book-Aficionado
+
+![Untitled](https://user-images.githubusercontent.com/102841726/189495853-421d7243-e40e-4e1a-88eb-7d17cf041cae.png)

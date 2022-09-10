@@ -21,6 +21,7 @@ const SearchBooks = () => {
   const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState("");
+  // eslint-disable-next-line
   const [saveBook, { error }] = useMutation(SAVE_BOOK)
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
@@ -78,7 +79,8 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await saveBook({
+      // eslint-disable-next-line
+      await saveBook({
         variables: { bookData: { ...bookToSave } }
       });
 
